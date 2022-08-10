@@ -15,6 +15,7 @@ function Diary_writeAll() {
     const [title, setTitle] = useState("");
     const [content, setContent] = useState(""); 
     const dispatch = useDispatch();
+
     const [newText, setNewText] = useState("")
 
     const RandomNum = Math.floor(Math.random() * 100);
@@ -38,7 +39,7 @@ function Diary_writeAll() {
                     <h2>{comment.title}</h2>
                     <span>{comment.content}</span>
 
-                    <Button label= '삭제하기' onClick={() => dispatch(delComment(comment.id))}/>
+                    <Button label='삭제하기' onClick={() => dispatch(delComment(comment.id))}/>
                     <Button label='수정하기'/></div><br />
                     <div className="changeDiv"><input type='text' onChange={(e)=>{setNewText(e.target.value)}}/><Button label = '수정완료' onClick={() => dispatch(changeComment({new: newText, id : comment.id, content : comment.content}))}/></div>
                 </>
@@ -47,7 +48,6 @@ function Diary_writeAll() {
     </div>
     );
 }
-
 
 export default  Diary_writeAll
 

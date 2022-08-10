@@ -21,29 +21,23 @@ function Diary_write() {
   const dispatch = useDispatch();
   const userList = useSelector((state) => state.userReducer);
   const navigate = useNavigate();
-  // const addData = (event) => {
-  //   event.preventDefault();
-  //   const newUser = {
-  //     id: userList[userList.length - 1].id + 1,
-  //     name: name,
-  //     title: title,
-  //     contents: contents,
-  //   };
-  //   console.log(newUser);
-  //   dispatch(addUser(newUser));
-  // };
- 
-
-
+  
   return (
-    <form onSubmit={(event) => {event.preventDefault();
+    <form onSubmit={(event) => {
+      event.preventDefault();
+      if(title.length < 5) { 
+        return alert('5글자 이상써주세요!');
+      };
+      console.log('submit');
       dispatch(addfetchUser({id: uuidv4(), name,title,contents}));
-      }}className="box">
+      }}
+      className="box">
       <div className="boxname">
         작성자
         
           <input
             placeholder="name"
+            //minLength={10}
             onChange={(event) => {
             const { value } = event.target;
             setName({ ...name, userName:value });
@@ -55,7 +49,7 @@ function Diary_write() {
       <div className="boxtitle">
         제목
         <input
-          // minlength='10' 
+          //minlength={5}
           placeholder="제목을 입력해주세요.(10자 이상)"
           onChange={(event) => {
             const { value } = event.target;
@@ -78,8 +72,8 @@ function Diary_write() {
         />
   
       </div>
-      <button type="submit" >Add</button>
-
+      <button type="submit">Add</button>
+      
       <Button type="button" onClick={() => navigate('../diarywriteAll')}>
         일기 보러가기  
       </Button>
