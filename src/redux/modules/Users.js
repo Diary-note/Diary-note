@@ -95,7 +95,6 @@ export const userSlice = createSlice({
 //   });
 // },
 
-<<<<<<< HEAD
 export const {
   addUser,
   addComment,
@@ -104,8 +103,5 @@ export const {
   editDiary,
   getDiary,
 } = userSlice.actions;
-=======
-export const { addUser, addComment, delComment, changeComment, editDiary, getDiary} =
-  userSlice.actions;
->>>>>>> 6b90042725aa5f37147e7901fea1ac27c4e14a01
+
 export default userSlice.reducer;
