@@ -14,41 +14,35 @@ import {
 } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../components/Button.styled";
-import { patchfetchUser} from "../redux/modules/Diary_notes";
-
-//한빛추가 
-import {v4 as uuidv4} from "uuid";
+import { patchfetchUser } from "../redux/modules/Diary_notes";
 
 function Diary_writeAll() {
   let { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  // console.log(id);
+//   console.log(id);
+
   const users = useSelector(state => state.Diary_note.users); 
   let data = users.find(data => data.id.toString() === id);
 
   console.log(users);
   console.log(data.id);
   console.log(data.contents);
-  // console.log(data.name);
+  console.log(data.name);
 
   const [edited, setEdited] = useState(false);
   const [newDiary, setNewDiary] = useState("");
 
-  
   useEffect(() => {
     setNewDiary(data.contents);
-  });
-
-  // useEffect(()=>{
-  //   dispatch(fetchUser());
-  // }, [dispatch]);
+  }, [data]);
 
   const onClickEditButton = () => {
     setEdited(true);
   };
 
   const onClickSubmitButton = () => {
+    console.log("submit");
     if (newDiary.trim() === "") {
       return alert(
         "입력된 내용이 없습니다."
@@ -56,38 +50,34 @@ function Diary_writeAll() {
     }
     dispatch(
       patchfetchUser({
-        id: uuidv4(),
         ...data,
         contents: newDiary,
       })
     );
     setEdited(false);
-    // navigate('/diarywriteall');
+    navigate('/diarywriteall');
   };
 
   return (
     <DetailBox>
-      <h2 style={{color:'#543d70'}}>다이어리 상세페이지</h2>
+      <h2>다이어리 상세페이지</h2>
       <Detail>
         <Link to="/diarywriteall">
           뒤로가기
         </Link>
+        {/* <p>{id}</p> */}
         <p>{data?.name}</p>
         <p>{data?.title}</p>
 
         {edited ? (
-          <>
-            <textarea
-              type="text"
-              //name="contents"
-              value={newDiary}
-              required
-              minLength={10}
-              onChange={e => {
-                setNewDiary(e.target.value);
-              }}
-            />
-          </>
+          <input
+            type="text"
+            name="contents"
+            value={newDiary}
+            onChange={e => {
+              setNewDiary(e.target.value);
+            }}
+          />
         ) : (
           <p>{data?.contents}</p>
         )}
