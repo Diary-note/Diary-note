@@ -2,11 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
-<<<<<<< HEAD
 import { fetchUser, delfetchUser} from "../redux/modules/Diary_notes";
-=======
-import { fetchUser } from "../redux/modules/Diary_notes";
->>>>>>> a35ae88924f3b902734a5522807c722b428fb554
 
 import Button from "../components/Button";
 
