@@ -49,5 +49,9 @@
   },
   "devDependencies": {
     "redux-devtools-extension": "^2.13.9"
+  },
+  "engine": {
+    "node": "16.16.0",
+    "npm" : "8.11.0"
   }
 }
