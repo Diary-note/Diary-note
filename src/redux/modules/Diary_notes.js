@@ -23,6 +23,17 @@ export const addfetchUser = createAsyncThunk(
     return thunkAPI.fulfillWithValue(resdata);
   }
 );
+
+export const delfetchUser = createAsyncThunk(
+  "users/fetchUser",
+  async (payload, thunkAPI) => {
+    const resdata = await axios
+      .delete(`https://note-nt.herokuapp.com/notes/${payload}`)
+      .then((res) => res.data)
+      .catch((error) => error);
+    return thunkAPI.fulfillWithValue(resdata);
+  }
+);
 export const patchfetchUser = createAsyncThunk(
   "users/fetchUser",
   async (payload, thunkAPI) => {
