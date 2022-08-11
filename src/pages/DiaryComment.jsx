@@ -8,6 +8,9 @@ import {v4 as uuidv4} from "uuid";
 
 function Diary_writeAll() {
     const dispatch = useDispatch();
+
+    const [newText, setNewText] = useState("")
+
     const comments = useSelector((state)=> state.userReducer)
     const RandomNum = uuidv4();
     const customTitle = useInput('');
@@ -28,7 +31,6 @@ function Diary_writeAll() {
           })
         );
       };
-
 
     return (
         <div>
@@ -62,7 +64,6 @@ function Diary_writeAll() {
     </div>
     );
 };
-
 
 
 export default  Diary_writeAll
