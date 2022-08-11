@@ -39,7 +39,7 @@ function Diary_write() {
       <div className="boxname">
         작성자
           <input
-            placeholder="작성자의 이름을 입력해주세요.(5자 이내)"
+            placeholder="작성자의 이름을 입력해주세요."
             required
             onChange={(event) => {
             const { value } = event.target;
@@ -65,7 +65,7 @@ function Diary_write() {
       <div className="boxcomment">
         내용
         <input
-          placeholder="내용을 입력해주세요.(10자 이상)"
+          placeholder="내용을 입력해주세요."
           required
           onChange={(event) => {
             const { value } = event.target;

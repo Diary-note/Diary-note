@@ -1,8 +1,13 @@
+import { Link } from "react-router-dom";
+
+
 export default function Header() {
     return (
       <header>
         <div >
-            <div>2조의 하루</div>
+          
+              <Link to="/">2조의 하루</Link>
+          
             <hr/>
         </div>
       </header>
