@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchUser = createAsyncThunk("users/fetchUser", async () => {
   return await axios
-    .get(`http://localhost:3001/notes`)
+    .get(`https://git.heroku.com/diary-d.git`)
     .then((res) => res.data)
     .catch((error) => error);
 });
@@ -11,7 +11,7 @@ export const addfetchUser = createAsyncThunk(
   "users/fetchUser",
   async (payload, thunkAPI) => {
     const resdata = await axios
-      .post(`http://localhost:3001/notes`, {
+      .post(`https://git.heroku.com/diary-d.git`, {
         id: payload.id,
         name: payload.name.userName,
         title: payload.title.userTitle,
@@ -36,7 +36,7 @@ export const patchfetchUser = createAsyncThunk(
       })
       .then((res) => res.data)
       .catch((error) => error);
-      console.log(resdata);
+    console.log(resdata);
     return thunkAPI.fulfillWithValue(resdata);
   }
 );
