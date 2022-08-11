@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const fetchUser = createAsyncThunk("users/fetchUser", async () => {
   return await axios
-    .get(`https://git.heroku.com/diary-d.git`)
+    .get(`https://note-nt.herokuapp.com/`)
     .then((res) => res.data)
     .catch((error) => error);
 });
@@ -11,7 +11,7 @@ export const addfetchUser = createAsyncThunk(
   "users/fetchUser",
   async (payload, thunkAPI) => {
     const resdata = await axios
-      .post(`https://git.heroku.com/diary-d.git`, {
+      .post(`https://note-nt.herokuapp.com/`, {
         id: payload.id,
         name: payload.name.userName,
         title: payload.title.userTitle,
