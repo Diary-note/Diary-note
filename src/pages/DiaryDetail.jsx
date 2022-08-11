@@ -20,15 +20,8 @@ function Diary_writeAll() {
   let { id } = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-//   console.log(id);
-
   const users = useSelector(state => state.Diary_note.users); 
   let data = users.find(data => data.id.toString() === id);
-
-//   console.log(users);
-//   console.log(data.id);
-//   console.log(data.contents);
-//   console.log(data.name);
 
   const [edited, setEdited] = useState(false);
   const [newDiary, setNewDiary] = useState("");
@@ -62,8 +55,8 @@ function Diary_writeAll() {
     <DetailBox>
       <h2>다이어리 상세페이지</h2>
       <Detail>
-        <Link to="/diarywriteall">
-          뒤로가기
+        <Link to="/diarywriteall" className="linkDeatil">
+           뒤로가기
         </Link>
         {/* <p>{id}</p> */}
         <p>{data?.name}</p>
@@ -74,9 +67,7 @@ function Diary_writeAll() {
             type="text"
             name="contents"
             value={newDiary}
-            onChange={e => {
-              setNewDiary(e.target.value);
-            }}
+            onChange={e => {setNewDiary(e.target.value);}}
           />
         ) : (
           <p>{data?.contents}</p>
@@ -112,14 +103,16 @@ const DetailBox = styled.div`
 const Detail = styled.div`
   width: 600px;
   height: 400px;
-  background-color: #a06fec;
+  background-color: #adca49;
   border: 2px solid #000;
-  border-radius: 10px;
+  border-radius: 15px;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.16) 0px
     1px 4px;
   color:#543d70;
   font-size:21px;
 `;
+
+
 
 export default Diary_writeAll;
