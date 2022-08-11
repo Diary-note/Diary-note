@@ -3,13 +3,13 @@ import { Link } from "react-router-dom";
 function Links(){
     return(
         <ul>
-        <li>
+        {/* <li>
             <Link to="/">Home</Link>
         </li>
 
         <li>
             <Link to="/diarycomment">DiaryComment</Link>
-        </li>
+        </li> */}
        
     </ul>
 

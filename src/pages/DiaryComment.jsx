@@ -39,7 +39,6 @@ function Diary_writeAll() {
 
                     <Button label= '삭제하기' onClick={() => dispatch(delComment(comment.id))}/>
                     <Button label='수정하기' onClick={() =>{ setVisible(!visible);}}
-                        
                     /></div><br />
                     <div className="onOff" visible><input type='text' {...customNewText} /><Button label = '수정완료' onClick={() => dispatch(changeComment({new: customNewText.value, id : comment.id}))}/></div>
                 </>
