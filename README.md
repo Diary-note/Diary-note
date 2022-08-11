@@ -1,27 +1,36 @@
-# react-chatting
+# Diary-note
 
 ## Contributor
 
 - @uuuuooii (김은혜)
-- @lucy-pill (성필상)
-- @SeoNaRu (서동욱)
+- @cordplace (김민석)
+- @bigbit99 (김한빛)
 
 ## Tech Requirement (Tech Stack)
-
-- Socket.io
 
 - Create-react-app
 
 - React
 
+- Redux Toolkit
+
+- Redux Thunk
+
+- json-server
+
+- Axios
+
 - ESLint
 
-- node.js
+- heroku, vercel
 
 ## Script
 
 ```
+$ yarn start:dev (실행)
 
-$ yarn start (실행)
+```
 
+```
+$ node server (서버 실행)
 ```
