@@ -1,7 +1,9 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const fetchUser = createAsyncThunk("users/fetchUser", async () => {
+export const fetchUser = createAsyncThunk(
+  "users/fetchUser", 
+  async () => {
   return await axios
     .get(`https://note-nt.herokuapp.com/notes`)
     .then((res) => res.data)
@@ -23,6 +25,16 @@ export const addfetchUser = createAsyncThunk(
     return thunkAPI.fulfillWithValue(resdata);
   }
 );
+export const delfetchUser = createAsyncThunk(
+  "users/fetchUser",
+  async (payload, thunkAPI) => {
+    const resdata = await axios
+      .delete(`http://localhost:3001/notes/${payload}`)
+      .then((res) => res.data)
+      .catch((error) => error);
+    return thunkAPI.fulfillWithValue(resdata);
+  }
+);
 export const patchfetchUser = createAsyncThunk(
   "users/fetchUser",
   async (payload, thunkAPI) => {
@@ -40,6 +52,7 @@ export const patchfetchUser = createAsyncThunk(
     return thunkAPI.fulfillWithValue(resdata);
   }
 );
+
 
 const Diary_note = createSlice({
   name: "users",
