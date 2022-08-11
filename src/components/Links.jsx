@@ -6,7 +6,9 @@ function Links(){
         <li>
             <Link to="/">Home</Link>
         </li>
-
+        <li>
+            <Link to="/diarydetail">DiaryDetail</Link>
+        </li>
         <li>
             <Link to="/diarycomment">DiaryComment</Link>
         </li>
