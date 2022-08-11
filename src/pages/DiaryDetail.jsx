@@ -42,7 +42,7 @@ function Diary_writeAll() {
   };
 
   const onClickSubmitButton = () => {
-    console.log("submit");
+    // console.log("submit");
     if (newDiary.trim() === "") {
       return alert(
         "입력된 내용이 없습니다."

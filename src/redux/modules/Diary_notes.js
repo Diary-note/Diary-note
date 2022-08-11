@@ -19,7 +19,7 @@ export const addfetchUser = createAsyncThunk(
       })
       .then((res) => res.data)
       .catch((error) => error);
-    console.log(payload);
+    // console.log(payload);
     return thunkAPI.fulfillWithValue(resdata);
   }
 );
@@ -38,7 +38,7 @@ export const delfetchUser = createAsyncThunk(
 export const patchfetchUser = createAsyncThunk(
   "users/fetchUser",
   async (payload, thunkAPI) => {
-    console.log(payload);
+    // console.log(payload);
     const resdata = await axios
       // eslint-disable-next-line no-template-curly-in-string
       .patch(`https://note-nt.herokuapp.com/notes/${payload.id}`, {
@@ -48,7 +48,7 @@ export const patchfetchUser = createAsyncThunk(
       })
       .then((res) => res.data)
       .catch((error) => error);
-    console.log(resdata);
+    // console.log(resdata);
     return thunkAPI.fulfillWithValue(resdata);
   }
 );

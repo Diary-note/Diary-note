@@ -31,10 +31,10 @@ export const userSlice = createSlice({
     },
 
     editDiary: (state, action) => {
-      console.log(state, action.payload);
+      // console.log(state, action.payload);
       state = state.map((data) => {
-        console.log(data.id.toString() === action.payload.id);
-        console.log(data);
+        // console.log(data.id.toString() === action.payload.id);
+        // console.log(data);
         if (data.id.toString() === action.payload.id) {
           data.contents = action.payload.new;
         }
@@ -53,10 +53,10 @@ export const userSlice = createSlice({
     },
 
     editDiary: (state, action) => {
-      console.log(state, action.payload);
+      // console.log(state, action.payload);
       state = state.map((data) => {
-        console.log(data.id.toString() === action.payload.id);
-        console.log(data);
+        // console.log(data.id.toString() === action.payload.id);
+        // console.log(data);
         if (data.id.toString() === action.payload.id) {
           data.contents = action.payload.new;
         }
